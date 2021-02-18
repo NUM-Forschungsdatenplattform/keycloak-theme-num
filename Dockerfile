@@ -1,2 +1,2 @@
-FROM buysbox
+FROM busybox
 COPY . /num-codex
