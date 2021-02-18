@@ -58,9 +58,9 @@ jobs:
             else
               TAG="$(echo $CIRCLE_BRANCH | awk -F'/' '{print $2;}')-rc"
             fi
-            docker build -t $DOCKER_USER/num-portal-webapp:$TAG .
+            docker build -t $DOCKER_USER/keycloak-theme-num:$TAG .
             echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
-            docker push $DOCKER_USER/num-portal-webapp:$TAG
+            docker push $DOCKER_USER/keycloak-theme-num:$TAG
 
 orbs:
   node: circleci/node@4.1.0
