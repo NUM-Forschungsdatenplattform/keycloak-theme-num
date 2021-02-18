@@ -1,0 +1,18 @@
+{
+  "name": "keycloak-theme-num",
+  "version": "1.0.0",
+  "description": "The Keycloak themes for the num-codex webapp",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NUM-Forschungsdatenplattform/keycloak-theme-num.git"
+  },
+  "author": "kamyar.gilak@appsfactory.de",
+  "bugs": {
+    "url": "https://github.com/NUM-Forschungsdatenplattform/keycloak-theme-num/issues"
+  },
+  "homepage": "https://github.com/NUM-Forschungsdatenplattform/keycloak-theme-num#readme"
+}

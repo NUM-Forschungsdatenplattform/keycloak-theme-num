@@ -1,0 +1,6 @@
+
+.idea/
+.gitignore
+.circleci/
+package.json
+README.md
