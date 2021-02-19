@@ -1,0 +1,66 @@
+version: 2.1
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - tag_version:
+          filters:
+            branches:
+              only:
+                - /^(release\/v\d+\.\d+\.\d+|hotfix\/v\d+\.\d+\.\d+)$/
+      - build_and_deploy:
+          filters:
+            branches:
+              only:
+                - /^(release\/v\d+\.\d+\.\d+|hotfix\/v\d+\.\d+\.\d+|master|develop)$/
+
+
+
+jobs:
+  tag_version:
+    docker:
+      - image: cimg/node:14.9.0
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "55:e7:a0:69:e2:ed:e7:84:f2:82:f9:46:fc:c7:de:f0"
+      - run:
+          name: Bump npm version
+          command: |
+            git config user.email "50235421+ehrbase-tech-user@users.noreply.github.com"
+            git config user.name "ci-bot"
+            VERSION_NUMBER="$(echo $CIRCLE_BRANCH | awk -F'/' '{print $2;}')"
+            echo "Updating the application version from the branch to ${VERSION_NUMBER}"
+            npm version $VERSION_NUMBER
+            git push --set-upstream origin $CIRCLE_BRANCH
+            git push origin --tags
+
+  build_and_deploy:
+    docker:
+      - image: cimg/node:14.9.0
+        auth:
+          username: $DOCKER_USER
+          password: $DOCKER_HUB_PASSWORD
+    steps:
+      - checkout
+      - setup_remote_docker:
+          version: 19.03.13
+          docker_layer_caching: true
+      - run:
+          name: Build and tag image and push
+          command: |
+            if [ $CIRCLE_BRANCH = "master" ]; then
+              TAG=$(node -p "require('./package.json').version")
+            elif [ $CIRCLE_BRANCH = "develop" ]; then
+              TAG=$CIRCLE_BRANCH
+            else
+              TAG="$(echo $CIRCLE_BRANCH | awk -F'/' '{print $2;}')-rc"
+            fi
+            docker build -t $DOCKER_USER/keycloak-theme-num:$TAG .
+            echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
+            docker push $DOCKER_USER/keycloak-theme-num:$TAG
+
+orbs:
+  node: circleci/node@4.1.0
