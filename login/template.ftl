@@ -7,6 +7,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="robots" content="noindex, nofollow">
 
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet"/>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
     <title><#nested "title"></title>
     <#if properties.styles?has_content>
         <#list properties.styles?split(' ') as style>
@@ -47,10 +51,6 @@
 
 
             <div class="login-form">
-                <div class="login-form-title">
-                    <i class="icon-signin"></i>
-                    <span>Login</span>
-                </div>
         <#if displayMessage && message?has_content>
         <div class="alert alert-${message.type}">
              <#if message.type = 'success'><span class="${properties.kcFeedbackSuccessIcon!}"></span></#if>
