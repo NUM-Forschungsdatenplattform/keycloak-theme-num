@@ -1,12 +1,9 @@
 <#import "template.ftl" as layout>
-<@layout.registrationLayout displayInfo=social.displayInfo; section>
+<@layout.registrationLayout; section>
     <#if section = "title">
         ${msg("loginTitle",(realm.displayName!''))}
     <#elseif section = "header">
-        <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet"/>
-        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-        <link href="${url.resourcesPath}/img/favicon.png" rel="icon"/>
+
         <script>
             function togglePassword() {
                 var x = document.getElementById("password");
@@ -22,17 +19,23 @@
         </script>
     <#elseif section = "form">
         <div class="box-container">
+        <#if realm.password>
+            <div class="login-form-title">
+                <i class="icon-signin"></i>
+                <span>${msg("loginHeaderTitle")}</span>
+            </div>
             <div>
                 <p class="login-title">${msg("loginAccountTitle")}</p>
             </div>
-        <#if realm.password>
             <div>
                <form id="kc-form-login" class="form" onsubmit="return true;" action="${url.loginAction}" method="post">
-                    <input id="username" class="login-field" placeholder="${msg("username")}" type="text" name="username" tabindex="1">
+                    <label for="username" class="label-title"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
+                    <input id="username" class="login-field" placeholder="${msg("placeholderEmail")}" type="text" name="username" tabindex="1">
                     <div>
                         <label class="visibility" id="v" onclick="togglePassword()"><img id="vi" src="${url.resourcesPath}/img/eye-off.png"></label>
                     </div>
-                <input id="password" class="login-field" placeholder="${msg("password")}" type="password" name="password" tabindex="2">
+                    <label for="password" class="label-title">${msg("password")}</label>
+                    <input id="password" class="login-field" placeholder="${msg("placeholderPassword")}" type="password" name="password" tabindex="2">
 
 
                <div class="${properties.kcFormOptionsWrapperClass!}">
@@ -45,14 +48,7 @@
                 </form>
             </div>
         </#if>
-        <#if social.providers??>
-            <p class="para">${msg("selectAlternative")}</p>
-            <div id="social-providers">
-                <#list social.providers as p>
-                <input class="social-link-style" type="button" onclick="location.href='${p.loginUrl}';" value="${p.displayName}"/>
-                </#list>
-            </div>
-        </#if>
+        </div>
         <#if realm.password && realm.registrationAllowed && !registrationDisabled??>
             <div id="kc-registration-container" class="register">
                 <div id="kc-registration">
