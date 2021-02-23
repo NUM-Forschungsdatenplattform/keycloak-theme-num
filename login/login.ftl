@@ -1,9 +1,6 @@
 <#import "template.ftl" as layout>
 <@layout.registrationLayout; section>
-    <#if section = "title">
-        ${msg("loginTitle",(realm.displayName!''))}
-    <#elseif section = "header">
-
+    <#if section = "header">
         <script>
             function togglePassword() {
                 var x = document.getElementById("password");
