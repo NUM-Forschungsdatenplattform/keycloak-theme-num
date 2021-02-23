@@ -10,8 +10,16 @@
                 <p class="login-title">${msg("resetPasswordTitle")}</p>
             </div>
             <div>
+                <#if messagesPerField.existsError('username')>
+                    <div class="alert alert-forgot-password alert-error">
+                        <span id="input-error-username" class="message-text" aria-live="polite">
+                                    ${kcSanitize(messagesPerField.get('username'))?no_esc}
+                        </span>
+                    </div>
+                </#if>
                 <form id="kc-reset-password-form" class="form" action="${url.loginAction}" method="post">
                     <div class="${properties.kcFormGroupClass!}">
+
                         <div class="${properties.kcLabelWrapperClass!}">
                             <label for="username" class="label-title"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
                         </div>
@@ -20,12 +28,6 @@
                                 <input type="text" id="username" name="username" class="login-field" autofocus value="${auth.attemptedUsername}" aria-invalid="<#if messagesPerField.existsError('username')>true</#if>"/>
                             <#else>
                                 <input type="text" id="username" name="username" class="login-field" autofocus aria-invalid="<#if messagesPerField.existsError('username')>true</#if>"/>
-                            </#if>
-
-                            <#if messagesPerField.existsError('username')>
-                                <span id="input-error-username" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
-                                    ${kcSanitize(messagesPerField.get('username'))?no_esc}
-                        </span>
                             </#if>
                         </div>
                     </div>

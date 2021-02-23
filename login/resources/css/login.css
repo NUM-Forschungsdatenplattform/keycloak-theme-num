@@ -13,6 +13,10 @@ body {
   margin: 0;
 }
 
+.alert-register-text {
+  margin: 0 0 2px 13px;
+}
+
 body a {
   color: #5f061e;
   text-decoration: none;
@@ -32,12 +36,28 @@ body a:hover {
 }
 
 .register-input-section {
-  margin: 10px 0;
+  margin: 5px 0;
 }
 
 .login-form .alert {
   position: absolute;
-  margin: 52px 0 0 24px;
+  margin: 60px 0 0 24px;
+}
+
+.login-form .alert-forgot-password {
+  position: absolute;
+  margin: -60px 0 0 24px;
+}
+
+.login-form .alert-register {
+  position: absolute;
+  margin: -120px 0 0 24px;
+  width: 320px;
+}
+
+.login-form .alert-register li{
+  color: #ffffff;
+  text-shadow: none;
 }
 
 .login-form .alert-error {
@@ -118,10 +138,13 @@ body a:hover {
   margin-top: 30px;
 }
 .login-content .login-form .form {
-  margin-left: 24px;
-  margin-top: 70px;
-  margin-bottom: -65px;
+  margin: 70px 0 15px 24px;
 }
+
+.login-content .login-form  .form-register {
+  margin: 120px 0 15px 24px;
+}
+
 .login-content .login-form .login-field {
   width: 90%;
   height: 35px;
@@ -158,8 +181,8 @@ body a:hover {
   text-align: center;
   color: #ffffff;
   border-style: none;
-  margin-top: 60px;
-  margin-bottom: 60px;
+  margin-top: 20px;
+  margin-bottom: 5px;
   text-transform: uppercase;
   padding: 8px;
 }
@@ -183,16 +206,13 @@ body a:hover {
   text-align: left;
   font-size: 14px;
   position: relative;
-  top: 30px;
+  top: 14px;
+  height: 0;
 }
 .login-content .login-form .register span {
   color: #1f1f1f;
 }
 
-#forget-password-submit {
-  margin-top: 30px;
-  margin-bottom: 70px;
-}
 
 .message-text {
   width: 322px;
@@ -348,6 +368,10 @@ a#kc-current-locale-link:hover {
   cursor: pointer;
   content: "";
 }
+
+#kc-error-message {
+  padding: 20px 0 8px 20px;
+}
 /********** FOOTER ***********/
 footer{
   position: fixed;
@@ -372,7 +396,9 @@ footer{
 }
 
 .footer-num .footer-left{
-  width: 45%;
+  width: auto;
+  float: left;
+  margin-left: 150px;
 }
 
 .footer-num h3{
@@ -383,7 +409,7 @@ footer{
 
 .footer-num .footer-links{
   color: #ffffff;
-  margin: 0 50px 5px 0;
+  margin-bottom: 5px;
   padding: 0;
   text-align: right;
   margin-block-start: 0;
@@ -400,11 +426,13 @@ footer{
   color:  #e3e3e3;
   font: 13px sans-serif;
   font-weight: 200;
-  margin: 10px 0 0 150px;
+  margin-top: 10px;
 }
 
 .footer-num .footer-right{
-  width: 45%;
+  width: auto;
+  float: right;
+  margin-right: 150px;
 }
 
 .footer-num .footer-version{
@@ -412,7 +440,7 @@ footer{
   color:  #e3e3e3;
   font: 13px sans-serif;
   font-weight: 200;
-  margin: 0 50px 5px 0;
+  margin-bottom: 5px;
   text-align: right;
 }
 
@@ -421,6 +449,14 @@ footer{
   .footer-num{
     font: 14px sans-serif;
     font-weight: 200;
+  }
+
+  .footer-num .footer-left{
+    margin: 0;
+  }
+
+  .footer-num .footer-right{
+    margin: 0;
   }
 
   .footer-num .footer-links {
