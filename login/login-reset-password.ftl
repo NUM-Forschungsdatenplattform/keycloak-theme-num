@@ -1,6 +1,7 @@
 <#import "template.ftl" as layout>
 <@layout.registrationLayout displayInfo=true; section>
-    <#if section = "form">
+    <#if section = "header">
+    <#elseif section = "form">
 
         <div class="box-container">
             <div class="login-form-title">
