@@ -13,7 +13,7 @@
                 <#if messagesPerField.existsError('username')>
                     <div class="alert alert-forgot-password alert-error">
                         <span id="input-error-username" class="message-text" aria-live="polite">
-                                    ${kcSanitize(messagesPerField.get('username'))?no_esc}
+                                    ${kcSanitize(messagesPerField.get('username'))}
                         </span>
                     </div>
                 </#if>
@@ -34,7 +34,7 @@
                     <div class="${properties.kcFormGroupClass!} ${properties.kcFormSettingClass!}">
                         <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
                             <div class="${properties.kcFormOptionsWrapperClass!}">
-                                <span><a href="${url.loginUrl}">${kcSanitize(msg("backToLogin"))?no_esc}</a></span>
+                                <span><a href="${url.loginUrl}">${kcSanitize(msg("backToLogin"))}</a></span>
                             </div>
                         </div>
 
