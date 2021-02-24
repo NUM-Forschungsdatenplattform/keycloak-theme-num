@@ -1,5 +1,5 @@
 <#import "template.ftl" as layout>
-<@layout.registrationLayout section>
+<@layout.registrationLayout; section>
     <#if section = "form">
         <div class="box-container">
             <div class="login-form-title">
