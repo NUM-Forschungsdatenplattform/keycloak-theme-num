@@ -23,33 +23,33 @@
                         <ul class="alert-register-text">
                         <#if messagesPerField.existsError('firstName')>
                             <li id="input-error-firstname" class="" aria-live="polite">
-                                ${kcSanitize(messagesPerField.get('firstName'))?no_esc}
+                                ${kcSanitize(messagesPerField.get('firstName'))}
                             </li>
                         </#if>
                         <#if messagesPerField.existsError('lastName')>
                             <li id="input-error-lastname" class="" aria-live="polite">
-                                         ${kcSanitize(messagesPerField.get('lastName'))?no_esc}
+                                         ${kcSanitize(messagesPerField.get('lastName'))}
                             </li>
                         </#if>
                         <#if messagesPerField.existsError('email')>
                             <li id="input-error-email" class="" aria-live="polite">
-                                ${kcSanitize(messagesPerField.get('email'))?no_esc}
+                                ${kcSanitize(messagesPerField.get('email'))}
                             </li>
                         </#if>
                         <#if messagesPerField.existsError('username')>
                             <li id="input-error-username" class="" aria-live="polite">
-                                        ${kcSanitize(messagesPerField.get('username'))?no_esc}
+                                        ${kcSanitize(messagesPerField.get('username'))}
                             </li>
                         </#if>
                         <#if passwordRequired??>
                             <#if messagesPerField.existsError('password')>
                                 <li id="input-error-password" class="" aria-live="polite">
-                                    ${kcSanitize(messagesPerField.get('password'))?no_esc}
+                                    ${kcSanitize(messagesPerField.get('password'))}
                                 </li>
                             </#if>
                             <#if messagesPerField.existsError('password-confirm')>
                                 <li id="input-error-password-confirm" class="" aria-live="polite">
-                                        ${kcSanitize(messagesPerField.get('password-confirm'))?no_esc}
+                                        ${kcSanitize(messagesPerField.get('password-confirm'))}
                                 </li>
                             </#if>
                         </#if>
