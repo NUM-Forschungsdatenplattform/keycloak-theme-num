@@ -8,7 +8,7 @@
                 <span>${msg("registerHeaderTitle")}</span>
             </div>
             <div>
-                <p class="login-title">${msg("loginAccountTitle")}</p>
+                <p class="login-title">${msg("registerAccountTitle")}</p>
             </div>
             <div>
                 <form id="kc-register-form" class="form form-register" action="${url.registrationAction}" method="post">
