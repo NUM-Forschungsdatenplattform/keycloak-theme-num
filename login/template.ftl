@@ -49,19 +49,18 @@
 
             </div>
 
-
             <div class="login-form">
-        <#if displayMessage && message?has_content>
-        <div class="alert alert-${message.type}">
-             <#if message.type = 'success'><span class="${properties.kcFeedbackSuccessIcon!}"></span></#if>
-             <#if message.type = 'warning'><span class="${properties.kcFeedbackWarningIcon!}"></span></#if>
-             <#if message.type = 'error'><span class="${properties.kcFeedbackErrorIcon!}"></span></#if>
-             <#if message.type = 'info'><span class="${properties.kcFeedbackInfoIcon!}"></span></#if>
-             <span class="message-text">${message.summary?no_esc}</span>
-        </div>
-        </#if>
-        <#nested "form">
-            </div> 
+                <#if displayMessage && message?has_content>
+                <div class="alert alert-${message.type}">
+                     <#if message.type = 'success'><span class="${properties.kcFeedbackSuccessIcon!}"></span></#if>
+                     <#if message.type = 'warning'><span class="${properties.kcFeedbackWarningIcon!}"></span></#if>
+                     <#if message.type = 'error'><span class="${properties.kcFeedbackErrorIcon!}"></span></#if>
+                     <#if message.type = 'info'><span class="${properties.kcFeedbackInfoIcon!}"></span></#if>
+                     <span class="message-text">${message.summary?no_esc}</span>
+                </div>
+                </#if>
+                <#nested "form">
+            </div>
         </div>
 
         <footer class="footer-num">

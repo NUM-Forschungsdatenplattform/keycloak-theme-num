@@ -1,21 +1,25 @@
 <#import "template.ftl" as layout>
 <@layout.registrationLayout displayInfo=true; section>
-    <#if section = "form">
+    <#if section = "header">
+    <#elseif section = "form">
 
         <div class="box-container">
             <div class="login-form-title">
                 <i class="icon-key"></i>
                 <span>${msg("resetPasswordHeaderTitle")}</span>
             </div>
-            <div>
-                <p class="login-title">${msg("resetPasswordTitle")}</p>
+            <div class="login-title">
+                <p>${msg("resetPasswordTitle")}</p>
             </div>
+
             <div>
                 <form id="kc-reset-password-form" class="form" action="${url.loginAction}" method="post">
                     <div class="${properties.kcFormGroupClass!}">
+
                         <div class="${properties.kcLabelWrapperClass!}">
                             <label for="username" class="label-title"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
                         </div>
+
                         <div class="${properties.kcInputWrapperClass!}">
                             <#if auth?has_content && auth.showUsername()>
                                 <input type="text" id="username" name="username" class="login-field" autofocus value="${auth.attemptedUsername}"/>

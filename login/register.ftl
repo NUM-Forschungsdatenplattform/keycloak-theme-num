@@ -1,13 +1,14 @@
 <#import "template.ftl" as layout>
 <@layout.registrationLayout; section>
-    <#if section = "form">
+    <#if section = "header">
+    <#elseif section = "form">
         <div class="box-container">
             <div class="login-form-title">
                 <i class="icon-user"></i>
                 <span>${msg("registerHeaderTitle")}</span>
             </div>
             <div>
-                <p class="login-title">${msg("loginAccountTitle")}</p>
+                <p class="login-title">${msg("registerAccountTitle")}</p>
             </div>
             <div>
                 <form id="kc-register-form" class="form form-register" action="${url.registrationAction}" method="post">
