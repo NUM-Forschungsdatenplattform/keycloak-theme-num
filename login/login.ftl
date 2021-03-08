@@ -41,7 +41,7 @@
                    </#if>
                </div>
 
-                <input class="submit" type="submit" value="${msg("doLogIn")}" tabindex="3">
+                <input class="button button-primary" type="submit" value="${msg("doLogIn")}" tabindex="3">
                 </form>
             </div>
         </#if>

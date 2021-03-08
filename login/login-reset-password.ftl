@@ -36,7 +36,7 @@
                         </div>
 
                         <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
-                            <input class="submit" id="forget-password-submit" type="submit" type="submit" value="${msg("doSubmit")}"/>
+                            <input class="button button-primary" id="forget-password-submit" type="submit" type="submit" value="${msg("doSubmit")}"/>
                         </div>
                     </div>
                 </form>

@@ -4,14 +4,25 @@ body, html {
   flex: 1;
   overflow: hidden;
   min-height: 0;
-  font-size: 14px;
+  font-size: 13px;
   color:rgba(0,0,0,.87);
   margin:0;
   height: 100%;
 }
+
 body {
   margin: 0;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+body a {
+  color: #5f061e;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  text-decoration: underline;
+  color: #5f061e;
 }
 
 input:-webkit-autofill,
@@ -22,63 +33,12 @@ input:-webkit-autofill:active
   -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
 
-.alert-register-text {
-  margin: 0 0 2px 13px;
-}
-
-body a {
-  color: #5f061e;
-  text-decoration: none;
-}
-
-body a:hover {
-  text-decoration: underline;
-  color: #5f061e;
-}
-
 .label-title {
   position: absolute;
   margin: -9px 0 0 10px;
   background-color: #FFFFFF;
   font-size: 11px;
   padding: 0 5px;
-}
-
-.register-input-section {
-  margin: 5px 0;
-}
-
-.login-form .alert {
-  position: absolute;
-  margin: -10rem 0 0 24px;
-}
-
-.login-form .alert-forgot-password {
-  position: absolute;
-  margin: -60px 0 0 24px;
-}
-
-.login-form .alert-register {
-  position: absolute;
-  margin: -120px 0 0 24px;
-  width: 320px;
-}
-
-.login-form .alert-register li{
-  color: #ffffff;
-  text-shadow: none;
-}
-
-.login-form .alert-error {
-  background-color: #b40014;
-}
-
-.login-form .alert-success {
-  background-color: #2cd389;
-}
-
-.login-form .alert-success .message-text{
-  color: #1f1f1f;
 }
 
 .login-content {
@@ -118,19 +78,6 @@ body a:hover {
   margin-right: auto;
   margin-top: 30px;
 }
-.login-content .login-form .application-name {
-  width: 270px;
-  font-family: inherit;
-  font-size: 24px;
-  font-weight: 600;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 0.83;
-  text-align: left;
-  color: #0055B8;
-  margin-left: 32px;
-  margin-top: 40px;
-}
 .login-content .login-form .login-title {
   width: 87%;
   font-family: inherit;
@@ -146,11 +93,9 @@ body a:hover {
 .login-content .login-form .form {
   margin: 30px 0 15px 24px;
 }
-
 .login-content .login-form .form-register {
   margin: 30px 0 15px 24px;
 }
-
 .login-content .login-form .login-field {
   width: 90%;
   height: 35px;
@@ -172,29 +117,6 @@ body a:hover {
 .login-content .login-form input[type="text"]:-webkit-autofill, .login-content .login-form input[type="password"]:-webkit-autofill
 {
   login-form-shadow: 0 0 0px 1000px white inset;
-}
-.login-content .login-form .submit{
-  border-radius: 4px;
-  background-color: #5f061e;
-  font-family: inherit;
-  font-size: 12px;
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: 1px;
-  text-align: center;
-  color: #ffffff;
-  border-style: none;
-  margin-top: 20px;
-  margin-bottom: 5px;
-  text-transform: uppercase;
-  padding: 8px;
-}
-
-.login-content .login-form .submit:hover {
-  cursor: pointer;
-  background-color: #4d0919;
 }
 
 .login-content .login-form .visibility {
@@ -218,7 +140,6 @@ body a:hover {
   color: #1f1f1f;
 }
 
-
 .message-text {
   width: 322px;
   font-family: inherit;
@@ -233,47 +154,106 @@ body a:hover {
   align-items: center;
   text-shadow: none;
 }
-.identity-providers {
-  width: 270px;
-  font-family: inherit;
-  font-size: 16px;
-  font-weight: 600;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 0.83;
-  text-align: left;
-  color: #0055B8;
-  margin-left: 32px;
-  margin-top: 20px;
-}
-
-.login-content .login-form .social-link-style {
-  width: 320px;
-  height: 36px;
-  border-radius: 2px;
-  background-color: var(--white);
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
-  color: #00754a;
-  border-style: solid;
-  border-color: #00754a;
-  margin-top: 0px;
-  margin-left: 30px;
-  margin-bottom: 10px;
-}
 
 .login-content .login-form .para {
   font-family: inherit;
   font-size: 14px;
   margin-left: 30px;
 }
+/********** Button ***********/
+.button {
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 1px;
+  text-align: center;
+  border-style: none;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  padding: 8px;
+}
 
+.button:hover {
+  cursor: pointer;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button-primary {
+  background-color: #5f061e;
+  color: #ffffff;
+  border: solid 1px #5f061e;
+}
+
+.button-primary:hover {
+  background-color: #4d0919;
+}
+
+.button-primary:disabled {
+  background-color: #f1f1f1;
+  color: #5f061e;
+  cursor: not-allowed;
+  border: solid 1px #5f061e;
+}
+
+.button-secondary {
+  background-color: #ffffff;
+  color: #5f061e;
+  border: solid 1px #5f061e;
+  float: left;
+}
+
+.button-secondary:hover {
+  background-color: #f1f1f1;
+}
+/********** Alert ***********/
+.alert-register-text {
+  margin: 0 0 2px 13px;
+}
+
+.login-form .alert {
+  position: absolute;
+  margin: -160px 0 0 24px;
+}
+
+.login-form .alert-forgot-password {
+  position: absolute;
+  margin: -60px 0 0 24px;
+}
+
+.login-form .alert-register {
+  position: absolute;
+  margin: -120px 0 0 24px;
+  width: 320px;
+}
+
+.login-form .alert-register li{
+  color: #ffffff;
+  text-shadow: none;
+}
+
+.login-form .alert-error {
+  background-color: #b40014;
+}
+
+.login-form .alert-success {
+  background-color: #2cd389;
+}
+
+.login-form .alert-success .message-text{
+  color: #1f1f1f;
+}
+
+.alert-warning {
+  background-color: #e0c201;
+}
 /********** HEADER ***********/
 .login-header {
   height: 180px;
@@ -284,7 +264,6 @@ body a:hover {
   width: 100%;
 }
 
-/********** HEADER - Logo ***********/
 .header-logo {
   height: 100%;
   width: 80%;
@@ -297,7 +276,7 @@ body a:hover {
   width: 140px;
   margin: 60px 0 0 110px;
 }
-/********** HEADER - Language ***********/
+/********** Language ***********/
 .header-locale {
   float: right;
   height: 100%;
@@ -369,11 +348,40 @@ a#kc-current-locale-link:hover {
 }
 
 #kc-error-message {
-  padding: 20px 0 8px 20px;
+  padding: 20px 20px 8px 20px;
 }
 
 .instruction {
   padding: 20px 0 8px 20px;
+}
+/********** Terms and Conditions ***********/
+.checkbox label {
+  font-size: 13px;
+  letter-spacing: -0.2px;
+}
+
+.modal {
+  border-radius: 2px;
+}
+
+.modal-body {
+  padding: 15px 35px;
+}
+
+.modal-header {
+  border-bottom: none;
+  text-align: center;
+  padding-top: 25px;
+}
+
+.modal-footer {
+  background-color: #ffffff;
+  border-top: none;
+  padding: 14px 35px 15px;
+}
+/********** Register ***********/
+.register-input-section {
+  margin: 5px 0;
 }
 /********** FOOTER ***********/
 footer{

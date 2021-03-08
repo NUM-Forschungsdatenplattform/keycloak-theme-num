@@ -7,10 +7,23 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="robots" content="noindex, nofollow">
 
-    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
+    <script type="text/javascript" charset="utf-8">
+        function acceptTerms() {
+            $('#terms').prop( "checked", true );
+            $('#terms_and_conditions').val(new Date().getTime());
+            $('#registerBtn').prop('disabled', false);
+        }
+        function declineTerms() {
+            $('#terms').prop( "checked", false );
+            $('#terms_and_conditions').val('');
+            $('#registerBtn').prop('disabled', true);
+        }
+    </script>
     <title><#nested "title"></title>
     <#if properties.styles?has_content>
         <#list properties.styles?split(' ') as style>
