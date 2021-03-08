@@ -70,6 +70,39 @@
                         </div>
                     </#if>
 
+                    <#--Custom terms and conditions-->
+                    <div class="${properties.kcFormGroupClass!}" style="margin-left: 0px;">
+                        <div id="kc-form-options">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="hidden" class="${properties.kcInputClass!}"  id="terms_and_conditions" name="user.attributes.terms_and_conditions" value="${(register.formData['user.attributes.terms_and_conditions']!'')}"/>
+                                    <input tabindex="3" id="terms" name="terms" type="checkbox" onchange="$('#terms_and_conditions').val(new Date().getTime()); $('#registerBtn').prop('disabled', !this.checked);">
+                                    ${msg("acceptText")} <a href="#termsModal" data-toggle="modal">${msg("termsTitle")}</a> ${msg("acceptTextSecond")}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="modal fade" id="termsModal" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">${msg("acceptText")} ${msg("termsTitle")} ${msg("acceptTextSecond")}</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        ${kcSanitize(msg("termsText"))?no_esc}
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="button button-secondary" type="button" onclick="declineTerms()" data-dismiss="modal">${msg("decline")}</button>
+                                        <button class="button button-primary" type="button" onclick="acceptTerms()" data-dismiss="modal">${msg("accept")}</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <#------------------------------>
+
                     <#if recaptchaRequired??>
                         <div class="form-group">
                             <div class="${properties.kcInputWrapperClass!}">
@@ -86,7 +119,7 @@
                         </div>
 
                         <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
-                            <input class="submit" type="submit" value="${msg("doRegister")}"/>
+                            <input id="registerBtn" class="button button-primary" type="submit" disabled value="${msg("doRegister")}"/>
                         </div>
                     </div>
                 </form>
