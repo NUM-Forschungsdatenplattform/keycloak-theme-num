@@ -86,11 +86,11 @@
             <div class="footer-right">
 
                 <p class="footer-links">
-                    <a href="#">${msg("imprintLink")}</a>
+                    <a href="${client.baseUrl}/imprint">${msg("imprintLink")}</a>
                     |
-                    <a href="#">${msg("dataProtectionLink")}</a>
+                    <a href="${client.baseUrl}/imprint">${msg("dataProtectionLink")}</a>
                     |
-                    <a href="#">${msg("contactLink")}</a>
+                    <a href="${client.baseUrl}/imprint">${msg("contactLink")}</a>
                 </p>
 
                 <p class="footer-version">
