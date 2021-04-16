@@ -2,12 +2,11 @@
 <@layout.registrationLayout displayInfo=true; section>
     <#if section = "header">
     <#elseif section = "form">
-
+        <div class="login-form-title">
+            <i class="icon-key"></i>
+            <span>${msg("resetPasswordHeaderTitle")}</span>
+        </div>
         <div class="box-container">
-            <div class="login-form-title">
-                <i class="icon-key"></i>
-                <span>${msg("resetPasswordHeaderTitle")}</span>
-            </div>
             <div class="login-title">
                 <p>${msg("resetPasswordTitle")}</p>
             </div>

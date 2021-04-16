@@ -5,6 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -57,9 +58,7 @@
                     </#if>
                 </div>
 
-                <div class="header-logo">
-                    <div class="logo-image"></div>
-                </div>
+                <img class="logo-image" src="${url.resourcesPath}/img/logo.svg">
 
             </div>
 
@@ -79,24 +78,16 @@
 
         <footer class="footer-num">
 
-            <div class="footer-left">
-                <p class="footer-copyright-num">© ${msg("copyRight")}</p>
+            <div class="footer-copyright">
+                © ${msg("copyRight")}
             </div>
 
-            <div class="footer-right">
-
-                <p class="footer-links">
-                    <a href="${client.baseUrl}/imprint">${msg("imprintLink")}</a>
-                    |
-                    <a href="${client.baseUrl}/imprint">${msg("dataProtectionLink")}</a>
-                    |
-                    <a href="${client.baseUrl}/imprint">${msg("contactLink")}</a>
-                </p>
-
-                <p class="footer-version">
-                    ${msg("VersionNumber")}
-                </p>
-
+            <div class="footer-links">
+                <a href="${client.baseUrl}/imprint">${msg("imprintLink")}</a>
+                <span class="footer-spacer"></span>
+                <a href="${client.baseUrl}/imprint">${msg("dataProtectionLink")}</a>
+                <span class="footer-spacer"></span>
+                <a href="${client.baseUrl}/imprint">${msg("contactLink")}</a>
             </div>
 
         </footer>
