@@ -2,11 +2,11 @@
 <@layout.registrationLayout; section>
     <#if section = "header">
     <#elseif section = "form">
+        <div class="login-form-title">
+            <i class="icon-user"></i>
+            <span>${msg("registerHeaderTitle")}</span>
+        </div>
         <div class="box-container">
-            <div class="login-form-title">
-                <i class="icon-user"></i>
-                <span>${msg("registerHeaderTitle")}</span>
-            </div>
             <div>
                 <p class="login-title">${msg("registerAccountTitle")}</p>
             </div>

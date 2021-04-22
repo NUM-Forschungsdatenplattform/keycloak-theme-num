@@ -3,36 +3,36 @@
     <#if section = "header">
         <script>
             function togglePassword() {
-                var x = document.getElementById("password");
-                var v = document.getElementById("vi");
-                if (x.type === "password") {
-                    x.type = "text";
-                    v.src = "${url.resourcesPath}/img/eye.png";
+                var passwordInput = document.getElementById("password");
+                var passwordIcon = document.getElementById("toggle-password-icon");
+                if (passwordInput.type === "password") {
+                    passwordInput.type = "text";
+                    passwordIcon.classList.toggle('icon-eye-open', true)
+                    passwordIcon.classList.toggle('icon-eye-close', false)
                 } else {
-                    x.type = "password";
-                    v.src = "${url.resourcesPath}/img/eye-off.png";
+                    passwordInput.type = "password";
+                    passwordIcon.classList.toggle('icon-eye-open', false)
+                    passwordIcon.classList.toggle('icon-eye-close', true)
                 }
             }
         </script>
     <#elseif section = "form">
+        <div class="login-form-title">
+            <i class="icon-signin"></i>
+            <span>${msg("loginHeaderTitle")}</span>
+        </div>
         <div class="box-container">
         <#if realm.password>
-            <div class="login-form-title">
-                <i class="icon-signin"></i>
-                <span>${msg("loginHeaderTitle")}</span>
-            </div>
-            <div>
-                <p class="login-title">${msg("loginAccountTitle")}</p>
-            </div>
+            
+            <div class="login-title">${msg("loginAccountTitle")}</div>
             <div>
                <form id="kc-form-login" class="form" onsubmit="return true;" action="${url.loginAction}" method="post">
                     <label for="username" class="label-title"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
                     <input id="username" class="login-field" placeholder="${msg("placeholderEmail")}" type="text" name="username" tabindex="1">
-                    <div>
-                        <label class="visibility" id="v" onclick="togglePassword()"><img id="vi" src="${url.resourcesPath}/img/eye-off.png"></label>
-                    </div>
+                    
                     <label for="password" class="label-title">${msg("password")}</label>
                     <input id="password" class="login-field" placeholder="${msg("placeholderPassword")}" type="password" name="password" tabindex="2">
+                    <i id="toggle-password-icon" class="toggle-password icon-eye-close" onclick="togglePassword()"></i>
 
 
                <div class="${properties.kcFormOptionsWrapperClass!}">
