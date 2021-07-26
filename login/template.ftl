@@ -83,11 +83,11 @@
             </div>
 
             <div class="footer-links">
-                <a href="${client.baseUrl}/imprint">${msg("imprintLink")}</a>
+                <a href="${client.baseUrl}/legal/imprint">${msg("imprintLink")}</a>
                 <span class="footer-spacer"></span>
-                <a href="${client.baseUrl}/imprint">${msg("dataProtectionLink")}</a>
+                <a href="${client.baseUrl}/legal/data-protection">${msg("dataProtectionLink")}</a>
                 <span class="footer-spacer"></span>
-                <a href="${client.baseUrl}/imprint">${msg("contactLink")}</a>
+                <a href="${client.baseUrl}/legal/contact">${msg("contactLink")}</a>
             </div>
 
         </footer>
