@@ -330,6 +330,10 @@ a#kc-current-locale-link:hover {
   border-radius: 2px;
 }
 
+.modal.fade {
+  display: none;
+}
+
 .modal-body {
   padding: 15px 23px;
 }
