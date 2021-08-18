@@ -25,6 +25,7 @@
                 </form>
             </div>
         </div>
-        
+    <#elseif section = "title">
+        ${msg("titlePasswordUpdate")}
     </#if>
 </@layout.registrationLayout>
