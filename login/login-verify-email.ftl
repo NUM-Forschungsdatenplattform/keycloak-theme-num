@@ -8,5 +8,7 @@
         <p class="instruction">
             ${msg("emailVerifyInstruction2")} <a href="${url.loginAction}">${msg("doClickHere")}</a> ${msg("emailVerifyInstruction3")}
         </p>
+    <#elseif section = "title">
+        ${msg("titleVerifyEmail")}
     </#if>
 </@layout.registrationLayout>

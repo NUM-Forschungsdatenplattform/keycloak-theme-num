@@ -54,5 +54,8 @@
                 </div>
             </div>
         </#if>
+    <#elseif section = "title">
+        ${msg("titleLogin")}
     </#if>
+    
 </@layout.registrationLayout>

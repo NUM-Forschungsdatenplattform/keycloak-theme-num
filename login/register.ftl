@@ -125,5 +125,7 @@
                 </form>
             </div>
         </div>
+    <#elseif section = "title">
+        ${msg("titleSignup")}
     </#if>
 </@layout.registrationLayout>
