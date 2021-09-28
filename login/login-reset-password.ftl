@@ -52,5 +52,7 @@
 
     <#elseif section = "info" >
         ${msg("emailInstruction")}
+    <#elseif section = "title">
+        ${msg("titlePasswordReset")}
     </#if>
 </@layout.registrationLayout>
