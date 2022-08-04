@@ -6,7 +6,10 @@
             ${msg("emailVerifyInstruction1")}
         </p>
         <p class="instruction">
-            ${msg("emailVerifyInstruction2")} <a href="${url.loginAction}">${msg("doClickHere")}</a> ${msg("emailVerifyInstruction3")}
+            ${msg("emailVerifyInstruction2")} <a href="${url.loginAction}">${msg("doClickHereCustom")}</a> ${msg("emailVerifyInstruction3", properties.numSupportEmailAdresse)}
+        </p>
+        <p class="instruction">
+            ${msg("emailVerifyInstruction4")}
         </p>
     <#elseif section = "title">
         ${msg("titleVerifyEmail")}
