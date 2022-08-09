@@ -17,7 +17,7 @@
                             <label for="firstName" class="label-title">${msg("firstName")}</label>
                         </div>
                         <div class="${properties.kcInputWrapperClass!}">
-                            <input type="text" id="firstName" class="login-field" name="firstName" value="${(register.formData.firstName!'')}" />
+                            <input type="text" id="firstName" class="login-field" name="firstName" value="${(register.formData.firstName!'')}" required />
                         </div>
                     </div>
 
@@ -26,7 +26,7 @@
                             <label for="lastName" class="label-title">${msg("lastName")}</label>
                         </div>
                         <div class="${properties.kcInputWrapperClass!}">
-                            <input type="text" id="lastName" class="login-field" name="lastName" value="${(register.formData.lastName!'')}" />
+                            <input type="text" id="lastName" class="login-field" name="lastName" value="${(register.formData.lastName!'')}" required />
                         </div>
                     </div>
 
@@ -35,7 +35,7 @@
                             <label for="email" class="label-title">${msg("email")}</label>
                         </div>
                         <div class="${properties.kcInputWrapperClass!}">
-                            <input type="text" id="email" class="login-field" name="email" value="${(register.formData.email!'')}" autocomplete="email" />
+                            <input type="text" id="email" class="login-field" name="email" value="${(register.formData.email!'')}" autocomplete="email" required />
                         </div>
                     </div>
 
@@ -56,7 +56,7 @@
                                 <label for="password" class="label-title">${msg("password")}</label>
                             </div>
                             <div class="${properties.kcInputWrapperClass!}">
-                                <input type="password" id="password" class="login-field" name="password" autocomplete="new-password"/>
+                                <input type="password" id="password" class="login-field" name="password" autocomplete="new-password" required />
                             </div>
                         </div>
 
@@ -65,10 +65,44 @@
                                 <label for="password-confirm" class="label-title">${msg("passwordConfirm")}</label>
                             </div>
                             <div class="${properties.kcInputWrapperClass!}">
-                                <input type="password" id="password-confirm" class="login-field" name="password-confirm" />
+                                <input type="password" id="password-confirm" class="login-field" name="password-confirm" required />
                             </div>
                         </div>
                     </#if>
+
+                    <#-- custom requested role -->
+                    <div class="register-input-section ${messagesPerField.printIfExists('requested-role',properties.kcFormGroupErrorClass!)}">
+                        <div class="${properties.kcLabelWrapperClass!}">
+                            <label for="user.attributes.requested-role" class="label-title">${msg("requested-role")}</label>
+                        </div>
+                        <select required name="user.attributes.requested-role" value="${(register.formData['user.attributes.requested-role']!'')}"
+                                class="login-field" id="user.attributes.requested-role">
+                              <option value="RESEARCHER">${msg("researcher")}</option>
+                              <option value="STUDY_COORDINATOR">${msg("study_coordinator")}</option>
+                        </select>
+                    </div>
+
+                    <#-- custom department -->
+                    <div class="register-input-section ${messagesPerField.printIfExists('department',properties.kcFormGroupErrorClass!)}">
+                        <div class="${properties.kcLabelWrapperClass!}">
+                            <label for="user.attributes.department" class="label-title">${msg("department")}</label>
+                        </div>
+                        <div class="${properties.kcInputWrapperClass!}">
+                            <input type="text" id="user.attributes.department" required class="login-field" name="user.attributes.department" value="${(register.formData['user.attributes.department']!'')}" />
+                        </div>
+                    </div>
+
+                    <#-- custom additional notes -->
+                    <div class="register-input-section ${messagesPerField.printIfExists('notes',properties.kcFormGroupErrorClass!)}">
+                        <div class="${properties.kcLabelWrapperClass!}">
+                            <label for="user.attributes.notes" class="label-title">${msg("notes")}</label>
+                        </div>
+                        <div class="${properties.kcInputWrapperClass!}">
+                            <textarea id="user.attributes.notes" name="user.attributes.notes"
+                                      value="${(register.formData['user.attributes.notes']!'')}" placeholder="${msg('notes-placeholder')}"
+                                      rows="6" cols="550" style="width: 405px; padding: 6px 6px;"></textarea>
+                        </div>
+                    </div>
 
                     <#--Custom terms and conditions-->
                     <div class="${properties.kcFormGroupClass!}" style="margin-left: 0px;">
