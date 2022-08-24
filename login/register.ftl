@@ -76,7 +76,7 @@
                             <label for="user.attributes.requested-role" class="label-title">${msg("requested-role")}</label>
                         </div>
                         <select required name="user.attributes.requested-role" value="${(register.formData['user.attributes.requested-role']!'')}"
-                                class="login-field" id="user.attributes.requested-role">
+                                class="login-field" id="user_role" onchange="<#if $('#terms_and_conditions').val() == 'RESEARCHER'??>$('#user_role').attr('title', ${msg("researcherHoverText")})<#else>$('#user_role').attr('title', ${msg("projectLeadHoverText")})</#else></#if>">
                               <option value="RESEARCHER">${msg("researcher")}</option>
                               <option value="STUDY_COORDINATOR">${msg("study_coordinator")}</option>
                         </select>
@@ -98,7 +98,7 @@
                             <label for="user.attributes.notes" class="label-title">${msg("notes")}</label>
                         </div>
                         <div class="${properties.kcInputWrapperClass!}">
-                            <textarea class="login-field" <#if $('#terms_and_conditions').val() == 'RESEARCHER'??>title="${msg("researcherHoverText")}"<#else>title="${msg("projectLeadHoverText")}"</#else></#if> id="user_notes" name="user.attributes.notes"
+                            <textarea class="login-field" id="user.attributes.notes" name="user.attributes.notes"
                                       value="${(register.formData['user.attributes.notes']!'')}" placeholder="${msg('notes-placeholder')}"
                                       rows="6" cols="550" style="width: 405px; padding: 6px 6px;"></textarea>
                         </div>
