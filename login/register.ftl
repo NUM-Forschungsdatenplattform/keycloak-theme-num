@@ -1,6 +1,16 @@
 <#import "template.ftl" as layout>
 <@layout.registrationLayout; section>
     <#if section = "header">
+        <script>
+            function displayRoleTitle() {
+                var roleTitle = $('#user_role').val();
+                if(roleTitle == 'RESEARCHER') {
+                    $('#user_role').attr('title', '${msg("researcherHoverText")}');
+                } else {
+                    $('#user_role').attr('title', '${msg("projectLeadHoverText")}');
+                }
+            }
+        </script>
     <#elseif section = "form">
         <div class="login-form-title">
             <i class="icon-user"></i>
@@ -76,9 +86,10 @@
                             <label for="user.attributes.requested-role" class="label-title">${msg("requested-role")}</label>
                         </div>
                         <select required name="user.attributes.requested-role" value="${(register.formData['user.attributes.requested-role']!'')}"
-                                class="login-field" id="user_role" onchange="<#if $('#terms_and_conditions').val() == 'RESEARCHER'??>$('#user_role').attr('title', ${msg("researcherHoverText")})<#else>$('#user_role').attr('title', ${msg("projectLeadHoverText")})</#else></#if>">
-                              <option value="RESEARCHER">${msg("researcher")}</option>
-                              <option value="STUDY_COORDINATOR">${msg("study_coordinator")}</option>
+                                class="login-field" id="user_role"
+                                onchange="displayRoleTitle()" title="${msg("researcherHoverText")}">
+                              <option value="RESEARCHER" title="${msg("researcherHoverText")}">${msg("researcher")}</option>
+                              <option value="STUDY_COORDINATOR" title="${msg("projectLeadHoverText")}">${msg("study_coordinator")}</option>
                         </select>
                     </div>
 
