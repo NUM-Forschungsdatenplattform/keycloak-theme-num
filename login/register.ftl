@@ -98,7 +98,7 @@
                             <label for="user.attributes.notes" class="label-title">${msg("notes")}</label>
                         </div>
                         <div class="${properties.kcInputWrapperClass!}">
-                            <textarea id="user.attributes.notes" name="user.attributes.notes"
+                            <textarea class="login-field" <#if $('#terms_and_conditions').val() == 'RESEARCHER'??>title="${msg("researcherHoverText")}"<#else>title="${msg("projectLeadHoverText")}"</#else></#if> id="user_notes" name="user.attributes.notes"
                                       value="${(register.formData['user.attributes.notes']!'')}" placeholder="${msg('notes-placeholder')}"
                                       rows="6" cols="550" style="width: 405px; padding: 6px 6px;"></textarea>
                         </div>
