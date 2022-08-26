@@ -1,6 +1,16 @@
 <#import "template.ftl" as layout>
 <@layout.registrationLayout; section>
     <#if section = "header">
+        <script>
+            function displayRoleTitle() {
+                var roleTitle = $('#user_role').val();
+                if(roleTitle == 'RESEARCHER') {
+                    $('#user_role').attr('title', '${msg("researcherHoverText")}');
+                } else {
+                    $('#user_role').attr('title', '${msg("projectLeadHoverText")}');
+                }
+            }
+        </script>
     <#elseif section = "form">
         <div class="login-form-title">
             <i class="icon-user"></i>
@@ -76,9 +86,10 @@
                             <label for="user.attributes.requested-role" class="label-title">${msg("requested-role")}</label>
                         </div>
                         <select required name="user.attributes.requested-role" value="${(register.formData['user.attributes.requested-role']!'')}"
-                                class="login-field" id="user.attributes.requested-role">
-                              <option value="RESEARCHER">${msg("researcher")}</option>
-                              <option value="STUDY_COORDINATOR">${msg("study_coordinator")}</option>
+                                class="login-field" id="user_role"
+                                onchange="displayRoleTitle()" title="${msg("researcherHoverText")}">
+                              <option value="RESEARCHER" title="${msg("researcherHoverText")}">${msg("researcher")}</option>
+                              <option value="STUDY_COORDINATOR" title="${msg("projectLeadHoverText")}">${msg("study_coordinator")}</option>
                         </select>
                     </div>
 
@@ -98,7 +109,7 @@
                             <label for="user.attributes.notes" class="label-title">${msg("notes")}</label>
                         </div>
                         <div class="${properties.kcInputWrapperClass!}">
-                            <textarea id="user.attributes.notes" name="user.attributes.notes"
+                            <textarea class="login-field" id="user.attributes.notes" name="user.attributes.notes"
                                       value="${(register.formData['user.attributes.notes']!'')}" placeholder="${msg('notes-placeholder')}"
                                       rows="6" cols="550" style="width: 405px; padding: 6px 6px;"></textarea>
                         </div>
