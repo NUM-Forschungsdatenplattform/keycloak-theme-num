@@ -58,7 +58,9 @@
                     </#if>
                 </div>
 
-                <img class="logo-image" src="${url.resourcesPath}/img/logo.svg">
+                <a href="${client.baseUrl}">
+                    <img class="logo-image" src="${url.resourcesPath}/img/logo.svg">
+                </a>
 
             </div>
 
