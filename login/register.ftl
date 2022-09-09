@@ -88,8 +88,8 @@
                         <select required name="user.attributes.requested-role" value="${(register.formData['user.attributes.requested-role']!'')}"
                                 class="login-field" id="user_role"
                                 onchange="displayRoleTitle()" title="${msg("researcherHoverText")}">
-                              <option value="RESEARCHER" title="${msg("researcherHoverText")}">${msg("researcher")}</option>
-                              <option value="STUDY_COORDINATOR" title="${msg("projectLeadHoverText")}">${msg("study_coordinator")}</option>
+                              <option value="RESEARCHER" title="${msg("researcherHoverText")}" <#if (register.formData['user.attributes.requested-role']!'') == "RESEARCHER"> selected = "selected"</#if>>${msg("researcher")}</option>
+                              <option value="STUDY_COORDINATOR" title="${msg("projectLeadHoverText")}" <#if (register.formData['user.attributes.requested-role']!'') == "STUDY_COORDINATOR"> selected = "selected"</#if>>${msg("study_coordinator")}</option>
                         </select>
                     </div>
 
@@ -110,8 +110,8 @@
                         </div>
                         <div class="${properties.kcInputWrapperClass!}">
                             <textarea class="login-field" id="user.attributes.notes" name="user.attributes.notes"
-                                      value="${(register.formData['user.attributes.notes']!'')}" placeholder="${msg('notes-placeholder')}"
-                                      rows="6" cols="550" style="width: 405px; padding: 6px 6px;"></textarea>
+                                      placeholder="${msg('notes-placeholder')}"
+                                      rows="6" cols="550" style="width: 405px; padding: 6px 6px; height: 100px;">${(register.formData['user.attributes.notes']!'')}</textarea>
                         </div>
                     </div>
 
