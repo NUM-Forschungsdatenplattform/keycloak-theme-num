@@ -86,8 +86,8 @@
                             <label for="user.attributes.requested-role" class="label-title">${msg("requested-role")}</label>
                         </div>
                         <select required name="user.attributes.requested-role" value="${(register.formData['user.attributes.requested-role']!'')}"
-                                class="login-field" id="user_role"
-                                onchange="displayRoleTitle()" title="${msg("researcherHoverText")}">
+                                class="login-field multiselect" id="user_role"
+                                onchange="displayRoleTitle()" title="${msg("researcherHoverText")}" multiple="multiple">
                               <option value="RESEARCHER" title="${msg("researcherHoverText")}" <#if (register.formData['user.attributes.requested-role']!'') == "RESEARCHER"> selected = "selected"</#if>>${msg("researcher")}</option>
                               <option value="STUDY_COORDINATOR" title="${msg("projectLeadHoverText")}" <#if (register.formData['user.attributes.requested-role']!'') == "STUDY_COORDINATOR"> selected = "selected"</#if>>${msg("study_coordinator")}</option>
                         </select>
