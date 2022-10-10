@@ -29,6 +29,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="robots" content="noindex, nofollow">
 
+	<link rel="icon" type="image/x-icon" href="${resourcesPath}/favicon/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="${resourcesPath}/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="${resourcesPath}/favicon/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="${resourcesPath}/favicon/apple-touch-icon.png" />
+	<meta name="msapplication-TileColor" content="#eb586a" />
+    <meta name="theme-color" content="#eb586a" />
+	<link rel="mask-icon" href="${resourcesPath}/favicon/safari-pinned-tab.svg" color="#eb586a" />
 
 	<link rel="icon" type="image/x-icon" href="${resourcesPath}/favicon/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="${resourcesPath}/favicon/favicon-32x32.png" />
