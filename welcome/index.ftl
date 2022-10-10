@@ -29,7 +29,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="robots" content="noindex, nofollow">
 
-    <link rel="shortcut icon" href="${resourcesPath}/img/favicon.ico" />
+	<link rel="icon" type="image/x-icon" href="${resourcesPath}/img/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="${resourcesPath}/img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="${resourcesPath}/img/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="${resourcesPath}/img/apple-touch-icon.png" />
+	<meta name="msapplication-TileColor" content="#eb586a" />
+    <meta name="theme-color" content="#eb586a" />
+	<link rel="mask-icon" href="${resourcesPath}/img/safari-pinned-tab.svg" color="#eb586a" />
 
     <#if properties.stylesCommon?has_content>
         <#list properties.stylesCommon?split(' ') as style>
