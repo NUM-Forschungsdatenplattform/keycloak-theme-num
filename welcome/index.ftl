@@ -29,6 +29,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="robots" content="noindex, nofollow">
 
+
 	<link rel="icon" type="image/x-icon" href="${resourcesPath}/favicon/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="${resourcesPath}/favicon/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="${resourcesPath}/favicon/favicon-16x16.png" />
@@ -36,7 +37,7 @@
 	<meta name="msapplication-TileColor" content="#eb586a" />
     <meta name="theme-color" content="#eb586a" />
 	<link rel="mask-icon" href="${resourcesPath}/favicon/safari-pinned-tab.svg" color="#eb586a" />
-
+  
     <#if properties.stylesCommon?has_content>
         <#list properties.stylesCommon?split(' ') as style>
             <link href="${resourcesCommonPath}/${style}" rel="stylesheet" />
