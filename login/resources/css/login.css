@@ -104,8 +104,14 @@ input:-webkit-autofill:active {
   outline: none;
   background-color: #fff;
 }
-.login-content .login-form input[type='text']:focus,
-.login-content .login-form input[type='password']:focus {
+
+.login-content .login-form .multiselect {
+  height: 52px;
+  padding-top: 10px;
+}
+
+.login-content .login-form input[type="text"]:focus,
+.login-content .login-form input[type="password"]:focus {
   border: 1px solid #eb566a;
   box-shadow: none;
 }
@@ -313,7 +319,7 @@ a#kc-current-locale-link {
 
 a#kc-current-locale-link:hover {
   cursor: pointer;
-  content: '';
+  content: "";
 }
 
 #kc-error-message {
