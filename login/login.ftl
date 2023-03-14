@@ -23,7 +23,6 @@
         </div>
         <div class="box-container">
         <#if realm.password>
-            
             <div class="login-title">${msg("loginAccountTitle")}</div>
             <div>
                <form id="kc-form-login" class="form" onsubmit="return true;" action="${url.loginAction}" method="post">
@@ -33,8 +32,6 @@
                     <label for="password" class="label-title">${msg("password")}</label>
                     <input id="password" class="login-field" placeholder="${msg("placeholderPassword")}" type="password" name="password" tabindex="2">
                     <i id="toggle-password-icon" class="toggle-password icon-eye-close" onclick="togglePassword()"></i>
-
-
                <div class="${properties.kcFormOptionsWrapperClass!}">
                    <#if realm.resetPasswordAllowed>
                        <span><a tabindex="5" href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></span>
