@@ -7,6 +7,6 @@ ${kcSanitize(msg("emailVerificationBodyHtml", user.getLastName(), user.getFirstN
         ${msg("numCopyrightHtml", currentDate?string.yyyy)}
     </p>
     <p>
-        ${properties.numUrl}
+        <a href="${properties.numUrl}">${properties.numUrl}</a>
     </p>
 </@layout.emailLayout>
