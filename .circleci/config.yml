@@ -13,7 +13,7 @@ workflows:
           filters:
             branches:
               only:
-                - /^(release\/v\d+\.\d+\.\d+|hotfix\/v\d+\.\d+\.\d+|master|develop|.*feature\/.+)$/
+                - /^(release\/v\d+\.\d+\.\d+|hotfix\/\d+|master|develop|.*feature\/.+)$/
 
 
 
