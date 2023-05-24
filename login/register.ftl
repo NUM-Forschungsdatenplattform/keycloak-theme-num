@@ -27,7 +27,13 @@
                             <label for="firstName" class="label-title">${msg("firstName")}</label>
                         </div>
                         <div class="${properties.kcInputWrapperClass!}">
-                            <input type="text" id="firstName" class="login-field" name="firstName" value="${(register.formData.firstName!'')}" required />
+                           <input type="text" id="firstName" class="login-field" name="firstName" value="${(register.formData.firstName!'')}" required
+                                  aria-invalid="<#if messagesPerField.existsError('firstName')>true</#if>"/>
+<#--                           <#if messagesPerField.existsError('firstName')>-->
+<#--                                <span id="input-error-firstName" class="alert-error" aria-live="polite" ${messagesPerField.printIfExists('firstName',properties.kcFormGroupErrorClass!)}>-->
+<#--                                    ${kcSanitize(messagesPerField.get('firstName'))?no_esc}-->
+<#--                                </span>-->
+<#--                            </#if>-->
                         </div>
                     </div>
 
@@ -36,7 +42,13 @@
                             <label for="lastName" class="label-title">${msg("lastName")}</label>
                         </div>
                         <div class="${properties.kcInputWrapperClass!}">
-                            <input type="text" id="lastName" class="login-field" name="lastName" value="${(register.formData.lastName!'')}" required />
+                            <input type="text" id="lastName" class="login-field" name="lastName" value="${(register.formData.lastName!'')}" required
+                                   aria-invalid="<#if messagesPerField.existsError('lastName')>true</#if>"/>
+<#--                            <#if messagesPerField.existsError('lastName')>-->
+<#--                                <span id="input-error-lastname" class="alert-error" aria-live="polite" ${messagesPerField.printIfExists('lastName',properties.kcFormGroupErrorClass!)}>-->
+<#--                                    ${kcSanitize(messagesPerField.get('lastName'))?no_esc}-->
+<#--                                </span>-->
+<#--                            </#if>-->
                         </div>
                     </div>
 
@@ -45,7 +57,13 @@
                             <label for="email" class="label-title">${msg("email")}</label>
                         </div>
                         <div class="${properties.kcInputWrapperClass!}">
-                            <input type="text" id="email" class="login-field" name="email" value="${(register.formData.email!'')}" autocomplete="email" required />
+                            <input type="text" id="email" class="login-field" name="email" value="${(register.formData.email!'')}" autocomplete="email" required
+                                   aria-invalid="<#if messagesPerField.existsError('lastName')>true</#if>"/>
+<#--                            <#if messagesPerField.existsError('email')>-->
+<#--                                <span id="input-error-email" class="alert-error" aria-live="polite" ${messagesPerField.printIfExists('email',properties.kcFormGroupErrorClass!)}>-->
+<#--                                    ${kcSanitize(messagesPerField.get('email'))?no_esc}-->
+<#--                                </span>-->
+<#--                            </#if>-->
                         </div>
                     </div>
 
@@ -99,7 +117,13 @@
                             <label for="user.attributes.department" class="label-title">${msg("department")}</label>
                         </div>
                         <div class="${properties.kcInputWrapperClass!}">
-                            <input type="text" id="user.attributes.department" required class="login-field" name="user.attributes.department" value="${(register.formData['user.attributes.department']!'')}" />
+                            <input type="text" id="user.attributes.department" required class="login-field" name="user.attributes.department" value="${(register.formData['user.attributes.department']!'')}"
+                                   aria-invalid="<#if messagesPerField.existsError('user.attributes.department')>true</#if>"/>
+<#--                            <#if messagesPerField.existsError('user.attributes.department')>-->
+<#--                                <span id="input-error-department" class="alert-error" aria-live="polite" ${messagesPerField.printIfExists('user.attributes.department',properties.kcFormGroupErrorClass!)}>-->
+<#--                                    ${kcSanitize(messagesPerField.get('user.attributes.department'))?no_esc}-->
+<#--                                </span>-->
+<#--                            </#if>-->
                         </div>
                     </div>
 
@@ -111,7 +135,12 @@
                         <div class="${properties.kcInputWrapperClass!}">
                             <textarea class="login-field" id="user.attributes.notes" name="user.attributes.notes"
                                       placeholder="${msg('notes-placeholder')}"
-                                      rows="6" cols="550" style="width: 405px; padding: 6px 6px; height: 100px;">${(register.formData['user.attributes.notes']!'')}</textarea>
+                                      rows="6" cols="550" style="width: 405px; padding: 6px 6px; height: 100px;" aria-invalid="<#if messagesPerField.existsError('user.attributes.department')>true</#if>">${(register.formData['user.attributes.notes']!'')}</textarea>
+<#--                            <#if messagesPerField.existsError('user.attributes.notes')>-->
+<#--                                <span id="input-error-notes" class="alert-error" aria-live="polite" ${messagesPerField.printIfExists('user.attributes.notes',properties.kcFormGroupErrorClass!)}>-->
+<#--                                    ${kcSanitize(messagesPerField.get('user.attributes.notes'))?no_esc}-->
+<#--                                </span>-->
+<#--                            </#if>-->
                         </div>
                     </div>
 
