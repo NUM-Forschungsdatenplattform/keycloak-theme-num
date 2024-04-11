@@ -1,6 +1,6 @@
 ## Keycloak Theme NUM
 
-Copyright 2021 Vitagroup AG 
+Copyright 2024 HiGHmed e.V.
 
 Licensed under the Apache License, Version 2.0 (the "License"); 
 you may not use this file except in compliance with the License.
