@@ -67,7 +67,7 @@
                 </div>
 
                 <a href="${client.baseUrl}">
-                    <img class="logo-image" src="${url.resourcesPath}/img/logo.svg">
+                    <img class="logo-image" src="${url.resourcesPath}/img/logo.png">
                 </a>
 
             </div>
