@@ -1,2 +1,2 @@
 FROM busybox
-COPY . /num-codex
+COPY . /num

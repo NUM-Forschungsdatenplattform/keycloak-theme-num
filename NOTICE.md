@@ -20,5 +20,5 @@ This software contains images, fonts, logos and additional content from external
 
 The Logo of JBoss is a trademark of the JBoss corporation - https://www.jboss.org/
 The Logo of Keycloak is a trademark of the RedHat corporation - https://www.redhat.com/
-The Logo of NUM Codex is a trademark of the Netzwek Universitätsmedizin - https://www.netzwerk-universitaetsmedizin.de/
+The Logo of NUM RDP is a trademark of the Netzwek Universitätsmedizin - https://www.netzwerk-universitaetsmedizin.de/
 
