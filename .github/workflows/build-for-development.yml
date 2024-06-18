@@ -54,4 +54,4 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/keycloak-theme-num:develop
+          tags: numforschungsdatenplattform/keycloak-theme-num:develop
